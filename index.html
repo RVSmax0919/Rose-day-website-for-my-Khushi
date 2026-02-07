@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day 🌹</title>
+
+<!-- Romantic Font -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    animation: bgChange 30s infinite alternate;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Background rotation */
+@keyframes bgChange {
+    0% { background-image: url('https://i.postimg.cc/XJr2LJvJ/IMG-4384.jpg'); }
+    50% { background-image: url('https://i.postimg.cc/xjbxbch2/IMG-4385.jpg'); }
+    100% { background-image: url('https://i.postimg.cc/T3QCXmLc/IMG-4386.jpg'); }
+}
+
+.overlay {
+    background: rgba(0,0,0,0.35);
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Floating roses */
+.rose {
+    position: absolute;
+    width: 60px;
+    animation: floatUp 12s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-150px) rotate(360deg); }
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Girl rising effect */
+.girl {
+    width: 280px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255,192,203,0.8);
+    animation: rise 3s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes rise {
+    0% { transform: translateY(120px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 0 0 20px pink;
+}
+
+/* Gift box */
+.gift-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.gift-box {
+    width: 180px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* Letter popup */
+.letter {
+    display: none;
+    background: rgba(255,255,255,0.95);
+    color: #333;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    box-shadow: 0 0 40px rgba(255,105,180,0.6);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Flower burst */
+.burst {
+    position: fixed;
+    width: 40px;
+    animation: burst 2s linear forwards;
+}
+
+@keyframes burst {
+    0% { transform: scale(0) translateY(0); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-200px); opacity: 0; }
+}
+
+/* Responsive */
+@media(max-width: 600px){
+    .hero h1 { font-size: 2.2rem; }
+    .girl { width: 220px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- Floating Roses -->
+<img class="rose" style="left:10%; animation-delay:0s;" src="https://i.postimg.cc/BvM5dGzV/IMG-4381.jpg">
+<img class="rose" style="left:40%; animation-delay:3s;" src="https://i.postimg.cc/4yhz7H3G/IMG-4382.jpg">
+<img class="rose" style="left:70%; animation-delay:6s;" src="https://i.postimg.cc/Cx46LXtR/IMG-4383.jpg">
+
+<!-- Hero -->
+<section class="hero">
+    <img class="girl" src="https://i.postimg.cc/254Mv3V8/IMG-4345.jpg">
+    <h1>Happy Rose Day<br>to my favorite person 🌹</h1>
+</section>
+
+<!-- Gift Section -->
+<section class="gift-section">
+    <img class="gift-box" src="https://i.postimg.cc/Nfkx1T4f/IMG-4387.jpg" onclick="openLetter()">
+</section>
+
+<!-- Letter -->
+<div id="letter" class="letter">
+<p>
+Happy Rose Day 🌹<br>
+to my dear Panda 🐼🤍<br><br>
+
+My dearest Khushi,<br><br>
+
+Here is a rose for the bravest soul I know and the prettiest heart I have ever met.<br><br>
+
+You deserve not just flowers, but every effort that comes with love and intention.<br><br>
+
+They say “Where flowers bloom, so does hope” and you are my favorite kind of hope.<br><br>
+
+Your smile feels like a quiet miracle I never want to stop witnessing.<br><br>
+
+In a world full of temporary things,<br>
+tu meri forever feeling hai.<br><br>
+
+You make ordinary days softer and my heart calmer just by being you.<br><br>
+
+This rose is a small symbol of how deeply you are admired, cherished, and loved.<br><br>
+
+You’re not just beautiful — you are rare, gentle, and incredibly strong.<br><br>
+
+“I found you, and suddenly the world made sense.”<br><br>
+
+You’re the prettiest woman I know, inside and out.<br>
+Infinity marks — exactly the way you are.<br><br>
+
+Happy Rose Day, my Khushi 🐼🤍🌹
+</p>
+</div>
+
+</div>
+
+<script>
+function openLetter(){
+    document.getElementById('letter').style.display = "block";
+
+    // New rose burst images
+    const roseUrls = [
+        "https://i.postimg.cc/jSrSrnVB/IMG-4388.jpg",
+        "https://i.postimg.cc/0Q39Xb0g/IMG-4389.jpg",
+        "https://i.postimg.cc/XX643mPT/IMG-4390.jpg",
+        "https://i.postimg.cc/PxLCqG6s/IMG-4391.jpg"
+    ];
+
+    // Flower burst
+    for(let i=0;i<15;i++){
+        let flower = document.createElement("img");
+
+        // Pick a random rose from your new URLs
+        flower.src = roseUrls[Math.floor(Math.random()*roseUrls.length)];
+
+        flower.className = "burst";
+        flower.style.left = Math.random()*100 + "vw";
+        flower.style.top = "70%";
+        flower.style.width = "40px"; // size of the burst flowers
+        flower.style.pointerEvents = "none"; // avoid clicking issues
+
+        document.body.appendChild(flower);
+
+        setTimeout(()=>flower.remove(),2000);
+    }
+}
+</script>
+
+</body>
+</html>
